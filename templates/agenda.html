@@ -6,8 +6,14 @@
     <button type="button">Novo evento</button>
 </a>
   <ul>
-  {% for event in events %}
-  <li>{{event.title}} - {{event.event_date}}</li>
-  {% endfor %}
+    {% for event in events %}
+      <li>
+        {{event.title}} - {{event.event_date}}
+        (
+          <a href="event/?id={{event.id}}">Editar</a>/
+          <a href="event/delete/{{event.id}}">Excluir</a>
+        )        
+      </li>
+    {% endfor %}
   </ul>
 {% endblock %}
